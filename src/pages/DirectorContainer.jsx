@@ -20,6 +20,7 @@ const DirectorContainer = () => {
             <NavBar />
             <main>
                 <h1>Welcome to the Director's Directory!</h1>
+                <Link to="/directors/new">Add New Director</Link>
                 {/* all director components should render here depending on route */}
                 <Outlet />
             </main>
