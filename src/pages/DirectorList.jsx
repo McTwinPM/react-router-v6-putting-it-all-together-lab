@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 
 const DirectorList = () => {
-    // Replace me
-    const directors = []
+    const { directors } = useOutletContext();
 
-    const displayDirectors = directors.map(d => (
-        <li key={d.id}>
-            <Link to={`/directors/${d.id}`}>{d.name}</Link>
+    const displayDirectors = directors.map(director => (
+        <li key={director.id}>
+            <Link to={`/directors/${director.id}`}>{director.name}</Link>
         </li>
     ))
 
