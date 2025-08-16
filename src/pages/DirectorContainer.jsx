@@ -24,7 +24,7 @@ const DirectorContainer = () => {
             if (directors.id === updatedDirector.id) {
                 return updatedDirector
             }
-            return director
+            return directors
         }))
     }
 

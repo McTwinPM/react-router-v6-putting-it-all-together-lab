@@ -1,10 +1,11 @@
 import { useState } from "react"
-import { useOutletContext } from "react-router-dom"
+import { useOutletContext, useNavigate } from "react-router-dom"
 
 function DirectorForm() {
   const [name, setName] = useState("")
   const [bio, setBio] = useState("")
   const { addDirector } = useOutletContext()
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -20,11 +21,12 @@ function DirectorForm() {
         if (!r.ok) { throw new Error("failed to add director")}
         return r.json()
     })
-    .then(data => {
-        console.log(data)
+    .then(director => {
+        console.log(director)
         // handle context/state changes
         // navigate to newly created director page
-        addDirector(data)
+        addDirector(director)
+        navigate(`/directors/${director.id}`)
     })
     .catch(console.log)
   }

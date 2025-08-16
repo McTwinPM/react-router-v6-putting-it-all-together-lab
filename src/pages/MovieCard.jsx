@@ -7,7 +7,7 @@ function MovieCard() {
   const { id, directorId } = useParams()
   if (!director) return <h2>Director not found.</h2>
 
-  const movie = director.movies.find(m => m.id === id)
+  const movie = director.movies.find(movies => movies.id === id)
   if (!movie) return <h2>Movie not found.</h2>
 
   return (

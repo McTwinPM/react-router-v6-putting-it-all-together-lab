@@ -18,6 +18,8 @@ const App = () => {
                 <Route index element={<DirectorList />} />
                 <Route path="new" element={<DirectorForm />} />
                 <Route path=":id" element={<DirectorCard />} />
+                <Route path=":id/movies/new" element={<MovieForm />} />
+                <Route path=":id/movies/:movieId" element={<MovieCard />} />
             </Route>
         </Routes>
         </BrowserRouter>
