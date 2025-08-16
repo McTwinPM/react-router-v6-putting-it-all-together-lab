@@ -22,9 +22,6 @@ function DirectorForm() {
         return r.json()
     })
     .then(director => {
-        console.log(director)
-        // handle context/state changes
-        // navigate to newly created director page
         addDirector(director)
         navigate(`/directors/${director.id}`)
     })
@@ -33,7 +30,6 @@ function DirectorForm() {
 
   return (
     <div>
-      <h2>Add New Director</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

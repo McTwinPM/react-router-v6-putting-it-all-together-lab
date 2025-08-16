@@ -34,8 +34,8 @@ function MovieForm() {
       if (!r.ok) { throw new Error("failed to add movie") }
       return r.json()
     })
-    .then(updateDirector => {
-      updateDirector(updateDirector)
+    .then(updatedDirector => {
+      updateDirector(updatedDirector)
       navigate(`/directors/${id}/movies/${newMovie.id}`)
     })
     .catch(console.log)

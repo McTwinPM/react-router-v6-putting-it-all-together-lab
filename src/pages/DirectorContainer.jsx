@@ -21,10 +21,10 @@ const DirectorContainer = () => {
 
     const updateDirector = (updatedDirector) => {
         setDirectors(previousDirectors => previousDirectors.map(d => {
-            if (directors.id === updatedDirector.id) {
+            if (d.id === updatedDirector.id) {
                 return updatedDirector
             }
-            return directors
+            return d
         }))
     }
 
@@ -34,7 +34,6 @@ const DirectorContainer = () => {
             <main>
                 <h1>Welcome to the Director's Directory!</h1>
                 <Link to="/directors/new">Add New Director</Link>
-                {/* all director components should render here depending on route */}
                 <Outlet context={{ directors, addDirector, updateDirector }} />
             </main>
         </>
